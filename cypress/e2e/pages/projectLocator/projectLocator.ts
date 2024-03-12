@@ -16,6 +16,11 @@ module.exports = {
     ,
     LOGO_PROJECT: {
         LOGO: 'h1[class="brand-title text-white"]'
+    },
+    PLANING_PAGE:{
+        ADD:{
+            TITLE: 'input[id="Title"]'
+        }
     }
 
 }
