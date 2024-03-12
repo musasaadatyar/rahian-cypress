@@ -57,15 +57,5 @@ export class LoginPage {
     assertSuccessfulLogin(){
         cy.get(locator.LOGO_PROJECT.LOGO).should('be.visible').should('have.text','راهیان نور')
     }
-    loginPage(nationalCode: number, password?: string) {
-        let passwordUser: string = password ? password : '1q2w3E*';
 
-        this.openLoginPage()
-        this.clickOnVaGf()
-        this.clickOnEnterLoginPageButton()
-        this.enterNationalCode(nationalCode)
-        this.enterPassword(passwordUser)
-        this.clickEnterButton()
-        this.assertSuccessfulLogin()
-    }
 }
