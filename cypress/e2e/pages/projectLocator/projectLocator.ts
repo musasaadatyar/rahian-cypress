@@ -11,7 +11,12 @@ module.exports = {
     },
 
     GLOBAL_LOCATOR: {
-        BUTTON: 'button[type="button"]'
+        BUTTON: 'button[type="button"]',
+        H4: 'h4',
+        P:'p',
+        SPAN: 'span',
+        SEARCH_BTN: '.la-search',
+        ADD_BTN:'.la-plus',
     }
     ,
     LOGO_PROJECT: {
@@ -21,6 +26,13 @@ module.exports = {
         ADD:{
             TITLE: 'input[id="Title"]'
         }
+    },
+    MENU_BTN: {
+        PLANNING: 'a[href="/planing/grid"]'
+    },
+    HEADER_PROJECT: {
+        PROFILE_USER: 'li[class="nav-item header-profile dropdown-no-icon ng-star-inserted dropdown"]',
+        LOG_OUT_SVG:'svg[id="icon-logout"]'
     }
 
 }
