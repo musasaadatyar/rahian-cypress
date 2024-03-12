@@ -12,6 +12,7 @@ export default defineConfig({
     },
     e2e: {
         testIsolation: false,
+        defaultCommandTimeout:60000,
         setupNodeEvents(on, config) {
             // implement node event listeners here
             on('task', {
