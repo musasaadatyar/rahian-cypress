@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
-import {LoginPage} from "../e2e/pages/classPage/login/loginPage/loginPage";
+import {CoreClass} from "../e2e/pages/classPage/core/CoreClass";
 
-let loginPage = new LoginPage()
+let coreClass = new CoreClass()
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -18,11 +18,18 @@ let loginPage = new LoginPage()
 
 
 Cypress.Commands.add('login', (nationalCode: number, password?: string) => {
-    return loginPage.loginPage(nationalCode, password)
+    return coreClass.loginPage(nationalCode, password)
 })
-
-
-
+Cypress.Commands.add('logOut', () => {
+        return coreClass.logOut()
+    }
+)
+Cypress.Commands.add('search', () => {
+    return coreClass.searchClick()
+})
+Cypress.Commands.add('add', () => {
+    return coreClass.addClick()
+})
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 
@@ -59,6 +66,24 @@ declare global {
              * cy.get('h1').getText()
              */
             getText(element: Element): Chainable<Element>
+
+            /** log out project
+             * @example:
+             * cy.logOut()
+             */
+            logOut(): Chainable<any>
+
+            /**click on search btn
+             * example:
+             * cy.search()
+             */
+            search(): Chainable<any>
+
+            /**click on add btn
+             * example:
+             * cy.add()
+             */
+            add(): Chainable<any>
 
         }
     }
