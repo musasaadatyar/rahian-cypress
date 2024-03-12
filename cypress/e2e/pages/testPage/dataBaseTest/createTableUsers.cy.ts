@@ -9,7 +9,7 @@ import {
 let databaseFunction = new DataBseFunctions()
 
 describe('about dataBase', () => {
-    it.only('drop table', () => {
+    it('drop table', () => {
         cy.task('queryDb', databaseFunction.dropTable('rh', 'users'))
     });
 
