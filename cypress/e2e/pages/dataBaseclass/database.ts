@@ -34,6 +34,10 @@ export type TDataForDelete = {
     dataColumnEqual: string,
 }
 
+export type TUserLoginInfo = {
+    nationalCode: string |number;
+    password: string
+}
 export class DataBseFunctions {
     createDatabase(nameDataBase: string) {
         return `create database ${nameDataBase}`
@@ -83,6 +87,11 @@ export class DataBseFunctions {
     deleteRowFromTable(dataForDelete:TDataForDelete){
         return `delete from ${dataForDelete.databaseName}.${dataForDelete.tableName} where ${dataForDelete.columnName}="${dataForDelete.dataColumnEqual}"`
     }
+
+    getUserNationalCodeAndPassword(nationalCode: string | number){
+         return `select * from rh.user where ${nationalCode.toString}`
+    }
+
     splitLastComa(value: any) {
         return value.substring(0, value.lastIndexOf(','));
     }
